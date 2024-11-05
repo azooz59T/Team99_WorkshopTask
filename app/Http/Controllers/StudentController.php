@@ -3,23 +3,24 @@
 // This file is part of the App\Http\Controllers namespace
 namespace App\Http\Controllers;
 
-use App\Models\Student; // @todo what is this for?
+// This is to import the Student Model so that we can access and manipulate the Student table
+use App\Models\Student;
 
-// @todo: Add comments. What is this class responsible for?
+// This Class is responsible for the logic and operations for the API
 class StudentController extends Controller
 {
     /**
-     * @todo: What does the show function do? What parameters does it accept?
+     * @todo: The show function returns a view responsible for displaying a single student it accepts the student-ID as a parameter
      */
     public function show($id) {
-        /** 
-         * @todo: What does the view function do? What parameters does it accept?
+        /**
+         * @todo: Responsible for rendering the view for a specific student and it accepts the student-ID as a parameter
          */
         return view('/studentprofile', array('student'=>Student::find($id)));
     }
 
     /**
-     * @todo: What does the list function do? What parameters does it accept?
+     * @todo: The list function returns a view responsible for displaying all students it doesnt expect any parameter
      */
     public function list() {
         return view('/studentlisting', array('students'=>Student::all()));
